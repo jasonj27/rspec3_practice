@@ -24,14 +24,21 @@ RSpec.describe 'A cup of coffee' do
     expect(coffee.price).to eq(1.00)
   end
 
-  context 'with milk' do #contex 'with milk', focus:true do
+  context 'with milk' do
     before { coffee.add :milk }
 
     it 'cost $1.25' do
       expect(coffee.price).to eq(1.25)
     end
 
-    it 'is light in color'
-    it 'is cooler than 200 degree Fahrenheit'
+    it 'is light in color' do
+      pending 'Color not implemented yet'
+      expect(coffee.color).to be(:light)
+    end
+
+    it 'is cooler than 200 degree Fahrenheit' do
+      pending 'Temperature not implemented yet'
+      expect(coffee.temperature).to be < 200.0
+    end
   end
 end
