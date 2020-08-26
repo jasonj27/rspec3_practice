@@ -10,6 +10,10 @@ class Coffee
   def price
     1.00 + ingredients.size*0.25
   end
+
+  def inspect
+    "#< #{self.class.name} with #{@ingredients} >".to_s
+  end
 end
 
 RSpec.configure do |config|
