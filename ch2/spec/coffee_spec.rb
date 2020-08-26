@@ -24,11 +24,14 @@ RSpec.describe 'A cup of coffee' do
     expect(coffee.price).to eq(1.00)
   end
 
-  fcontext 'with milk' do #contex 'with milk', focus:true do
+  context 'with milk' do #contex 'with milk', focus:true do
     before { coffee.add :milk }
 
     it 'cost $1.25' do
       expect(coffee.price).to eq(1.25)
     end
+
+    it 'is light in color'
+    it 'is cooler than 200 degree Fahrenheit'
   end
 end
