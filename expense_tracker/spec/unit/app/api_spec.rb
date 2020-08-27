@@ -21,6 +21,8 @@ module ExpenseTracker
           allow(ledger).to receive(:record)
             .with(expense)
             .and_return(RecordResult.new(true, 417, nil)) #configure test double's behavior
+                                                          #ledger.record({ 'some' => 'data' }) 
+                                                          #return #<struct ExpenseTracker::RecordResult :success?=true, expense_id=417, error_message=nil>
 
           post '/expenses', JSON.generate(expense)
 
