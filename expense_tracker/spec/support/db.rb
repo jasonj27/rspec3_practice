@@ -1,4 +1,4 @@
-RSpect.configure do |c|
+RSpec.configure do |c|
   c.before(:suite) do
     Sequel.extension :migration
     Sequel::Migrator.run(DB, 'db/migrations')
