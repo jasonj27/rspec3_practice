@@ -14,4 +14,10 @@ RSpec.configure do |rspec|
     ENV.replace(original_env)
   end
   #global around hook, typically in spec_helper.rb or somewhere in spec/support 
+
+  rspec.before(:suite) do
+    #Remove leftover temporary files
+    FileUnit.rm_rf('tmp')
+  end
+  #:suite only allowed in Rspec.configure
 end
