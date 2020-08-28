@@ -7,4 +7,11 @@ RSpec.configure do |rspec|
     require 'pry'
   end
   #require pry only after examples that have the :pry metadata defined
+
+  rspec.around(:example) do |ex|
+    original_env = ENV.to_hash
+    ex.run
+    ENV.replace(original_env)
+  end
+  #global around hook, typically in spec_helper.rb or somewhere in spec/support 
 end
