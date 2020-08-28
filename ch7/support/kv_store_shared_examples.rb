@@ -1,8 +1,6 @@
 #shared_examples go in spec/support
 
-RSpec.shared_examples 'KV store' do |kv_store_class|
-  let(:kv_store){kv_store_class.new}
-
+RSpec.shared_examples 'KV store' do
   it 'allows you to fetch previously stored values' do
     kv_store.store(:language, 'Ruby')
     kv_store.store(:os, 'linux')
