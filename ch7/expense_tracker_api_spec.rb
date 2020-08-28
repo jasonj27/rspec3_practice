@@ -6,7 +6,10 @@ module APIHelpers
   end
 end
 
+RSpec.configure do |config|
+  config.include APIHelpers
+end
+
 RSpec.describe 'Expense Tracker API', :db do
-  include APIHelpers
 
 end
